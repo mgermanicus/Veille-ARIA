@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+
+
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Aria</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body role="application">
+        <!-- Good Practice especially when to many links on nav bar -->
+        <div id="skiplinkholder">
+            <a tabindex="0" id="skipLink" href="#skipTarget" onclick="document.getElementById('#skipTarget').focus();">Passer au contenu principal</a>
+        </div>
+
+
+            <!-- Header -->
+        <header>
+            <!--<img tabindex="0" role="banner" src="logo.png" height="10%" width="10%" />-->
+            <h1><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Demo</h1>
+            <nav>
+                <ul id="nav" role="menubar" title="Menu de navigation" class="menubar root-level">
+                    <li id="mb1-menu1" role="menuitem" aria-haspopup="true" tabindex="0" class="menu-parent">
+                        Menu 1
+                        <ul id="menu1" role="menu" aria-hidden="true" class="menu">
+                            <li id="sans-serif" role="menuitemradio" aria-checked="true" tabindex="-1" class="menu-item">Action 1</li>
+                            <li id="serif" role="menuitemradio" aria-checked="false" tabindex="-1" class="menu-item">Action 2</li>
+                            <li id="monospace" role="menuitemradio" aria-checked="false" tabindex="-1" class="menu-item">Action 3</li>
+                            <li id="fantasy" role="menuitemradio" aria-checked="false" tabindex="-1" class="menu-item">Action 4</li>
+                        </ul>
+                    </li>
+                    <li id="mb1-menu2" role="menuitem" aria-haspopup="true" tabindex="0" class="menu-parent">
+                        Menu 2
+                        <ul id="menu2" role="menu" aria-hidden="true" class="menu">
+                            <li id="italics" role="menuitemcheckbox" aria-checked="false" tabindex="-1" class="menu-item">Combined Action 1</li>
+                            <li id="bold" role="menuitemcheckbox" aria-checked="false" tabindex="-1" class="menu-item">Combined Action 2</li>
+                            <li id="underlined" role="menuitemcheckbox" aria-checked="false" tabindex="-1" class="menu-item">Combined Action 3</li>
+                        </ul>
+                    </li>
+                    <li id="menu3" role="menuitem" aria-haspopup="true" tabindex="0" class="menu-parent">
+                        Menu 3
+                        <ul role="menu" aria-hidden="true" class="menu">
+                            <li id="left" role="menuitem" aria-checked="true" tabindex="-1" class="menu-item"><a href="https://www.w3.org/WAI/">lien 1</a></li>
+                            <li id="centered" role="menuitem" aria-checked="false" tabindex="-1" class="menu-item"><a href="https://www.w3.org/WAI/">lien 2</a></li>
+                            <li id="right" role="menuitem" aria-checked="false" tabindex="-1" class="menu-item"><a href="https://www.w3.org/WAI/">lien 3</a></li>
+                            <li id="justify" role="menuitem" aria-checked="false" tabindex="-1" class="menu-item"><a href="https://www.w3.org/WAI/">lien 4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main -->
+        <main>
+            <article id="skipTarget" tabindex="0">
+                <h2>Le Contexte.</h2>
+                <p>
+                    Les développeurs ont contourné les limitations de HTML en créant des contrôles graphiques avec du JavaScript pour
+                    obtenir le comportement désiré.
+                </p>
+                <a href="https://www.w3.org/WAI/" class="link">En savoir plus<span class="screen-reader-text"> sur les problématiques de l'accessibilité des applications web.</span></a>
+            </article>
+            <article tabindex="0">
+                <h2>WAI-ARIA.</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <a href="https://www.w3.org/WAI/" class="link">En savoir plus<span class="screen-reader-text"> sur WAI-ARIA.</span></a>
+            </article>
+            <article class="last" tabindex="0">
+                <h2>Les rôles, états et propriétés.</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <a href="https://www.w3.org/WAI/" class="link">En savoir plus<span class="screen-reader-text"> sur les rôles, états et propriétés ARIA.</span></a>
+            </article>
+
+            <section id="tabpanel1" class="tabpanel">
+                <ul class="tablist" role="tablist">
+                    <li id="tab1" class="tab" aria-controls="panel1" aria-selected="true" role="tab" tabindex="0">
+                        Section 1</li>
+                    <li id="tab2" class="tab" aria-controls="panel2" role="tab" aria-selected="false" tabindex="0">
+                        Section 2 </li>
+                </ul>
+
+                <div id="panel1" class="panel" aria-labelledby="tab1" role="tabpanel" aria-hidden="false" tabindex="0">
+                    <h3> Section 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor sem et magna pellentesque,
+                        eget pretium nunc aliquet. Mauris feugiat blandit metus. Ut tincidunt consequat tincidunt. Donec
+                        leo ligula, molestie at consequat id, fermentum sit amet leo. Mauris pulvinar, elit eu bibendum
+                        eleifend, velit orci pellentesque quam, in tempus est velit non erat. Praesent sit amet tincidunt
+                        massa, id accumsan augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+                        inceptos himenaeos. Vestibulum nec turpis eget turpis scelerisque suscipit. Maecenas porttitor
+                        ipsum sed urna aliquet, ut dapibus arcu fermentum. Quisque faucibus ultricies dignissim. Cras
+                        dolor nulla, pretium sit amet pharetra quis, condimentum non leo. Sed nunc nibh, pretium at risus
+                        a, luctus maximus nisi. In lobortis porta laoreet. Aenean tellus dolor, feugiat at nisl sit amet,
+                        rhoncus commodo diam.</p>
+                </div>
+
+                <div id="panel2" class="panel" aria-labelledby="tab2" role="tabpanel" aria-hidden="true" tabindex="-1">
+                    <h3>Section 2</h3>
+                    <p>Quisque fringilla tincidunt enim, sed tristique dolor. Vestibulum a lacinia erat. Curabitur in
+                        metus id odio semper scelerisque nec eu ante. Maecenas at luctus risus. Nunc ut ultricies neque.
+                        Sed lobortis maximus metus in sagittis. Integer lectus arcu, luctus ut pulvinar et, sodales vel
+                        neque. Quisque interdum pulvinar purus in dignissim. Nulla sit amet urna ut lacus fringilla
+                        tincidunt id eget ex.</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer tabindex="0">
+            <h2>Footer</h2>
+            <p>Information about the document</p>
+        </footer>
+
+
+        <script src="jquery-3.1.0.min.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>

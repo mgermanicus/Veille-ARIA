@@ -1,0 +1,236 @@
+*,
+*:after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, sans-serif;
+}
+
+header, main, aside, footer {
+    margin: 0 15% 0 15%;
+}
+
+header {
+    text-align: center;
+    background: #ccc;
+    border: 1px solid #000;
+    border-top: 0;
+}
+
+h1 {
+    margin-bottom: 2rem;
+}
+
+/*********************/
+/*     SKIP LINK     */
+/*********************/
+#skiplinkholder {
+    position: absolute;
+    width: 100%;
+    padding: 0 0 0 0;
+}
+#skiplinkholder a, #skiplinkholder a:link, #skiplinkholder a:visited {
+    display: block;
+    left: -10000px;
+    position: absolute;
+    top: 0;
+    width: auto;
+    z-index: 2;
+    background: #B3E5FC;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-bottom-right-radius: 0.5rem;
+    border: 1px solid #0288D1;
+    color: #0288D1;
+    border-top: 0;
+    border-left: 0;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 1rem;
+}
+#skiplinkholder a:focus, #skiplinkholder a:active {
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+
+
+/**************/
+/*    MENU    */
+/**************/
+ul.menubar {
+    height: 1.85em;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    background: #ccc;
+}
+ul.menubar li {
+    display: inline;
+    position: relative;
+    padding: .35em;
+    height: 1.85em;
+    vertical-align: middle;
+    line-height: 1.85rem;
+}
+ul.menu {
+    position: absolute;
+    left: 0;
+    top: 1.75em;
+    list-style: none;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-weight: normal !important;
+    font-size: 100% !important;
+    border: 1px solid black;
+    background-color: #ccc;
+    width: 8.5em;
+}
+ul.menu li {
+    float: none;
+    display: block;
+    white-space: nowrap;
+    padding: 2px 1em;
+    color: black;
+}
+
+li[aria-checked="true"] {
+    font-weight: bold;
+    background: url('http://www.oaa-accessibility.org/media/examples/images/dot.png') no-repeat 5px 10px;
+}
+
+ul[aria-hidden="true"] {
+    display: none;
+}
+
+.menu-hover {
+    background-color: #700 !important;
+    color: white !important;
+}
+
+.menu-hover[aria-checked="true"] {
+    background-color: #700 !important;
+    color: white !important;
+    background-image: url('http://www.oaa-accessibility.org/media/examples/images/dot-selected.png') !important;
+}
+
+.menu-focus {
+    background-color: black;
+    font-weight: bold;
+    color: white !important;
+}
+
+li.menu-focus[aria-checked="true"] {
+    background-color: black;
+    font-weight: bold;
+    color: white !important;
+    background-image: url('http://www.oaa-accessibility.org/media/examples/images/dot-selected.png') !important;
+}
+.hidden {
+    position: absolute;
+    left: -200em;
+    top: -20em;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+
+/*****************/
+/*    Article    */
+/*****************/
+main {
+    text-align: center;
+}
+article {
+    width: 49.5%;
+    margin: 1rem auto 0 auto;
+    border: 1px solid #000;
+    display: inline-block;
+    vertical-align: middle;
+    min-height: 12rem;
+    padding: 0.5rem;
+}
+article p {
+    text-align: left;
+    padding: 1rem 0;
+}
+article a.link {
+    text-align: right;
+}
+article.last {
+    width: 100%;
+    min-height: 0;
+}
+
+/****************/
+/*    FOOTER    */
+/****************/
+footer {
+    position: absolute;
+    bottom:0;
+    width: 69%;
+    padding: 1rem;
+    background: #ccc;
+    border: 1px solid #000;
+    border-bottom: 0;
+}
+
+
+/*******************/
+/*    TAB PANEL    */
+/*******************/
+.tabpanel {
+    margin: 20px;
+    padding: 0;
+    height: 1%;
+}
+.tablist {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.tab {
+    margin: .2em 1px 0 0;
+    padding: 10px;
+    height: 2em;
+    font-weight: bold;
+    background-color: #ec9;
+
+    border: 1px solid black;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    float: left;
+    display: inline;
+}
+
+.panel {
+    clear: both;
+    display: block;
+    margin: 0 0 0 0;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: 1px solid black;
+
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+li[aria-selected='true'] {
+    color: black;
+    background-color: #fff;
+    border-bottom: 1px solid white;
+}
+
+div[aria-hidden='true'] {
+    display: none;
+}
